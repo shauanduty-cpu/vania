@@ -1,0 +1,1080 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vania Dream World ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+ --bg:#160d20;
+ --pink:#ffacd0;
+ --pink2:#ed7fb3;
+ --lav:#c8a9ff;
+ --white:#fff3fa;
+ --muted:#c4aebe;
+ --glass:rgba(255,255,255,.065);
+}
+
+* {box-sizing:border-box}
+
+html {scroll-behavior:smooth}
+
+body {
+ margin:0;
+ background:var(--bg);
+ color:var(--white);
+ font-family:Vazirmatn,sans-serif;
+ overflow-x:hidden;
+}
+
+button {font-family:inherit;cursor:pointer}
+a {color:inherit;text-decoration:none}
+
+::selection {background:#ffacd0;color:#160d20}
+
+/* BACKGROUND */
+
+body::before {
+ content:"";
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ z-index:-1;
+ background:
+ radial-gradient(ellipse at 15% 20%,#793d7030,transparent 40%),
+ radial-gradient(ellipse at 90% 75%,#7050a030,transparent 40%),
+ radial-gradient(ellipse at 50% 50%,#3a214b40,transparent 70%);
+}
+
+#particles {
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ overflow:hidden;
+ z-index:1;
+}
+
+.particle {
+ position:absolute;
+ bottom:-50px;
+ animation:floatUp linear forwards;
+ opacity:.7;
+}
+
+@keyframes floatUp {
+ to {transform:translateY(-115vh) rotate(360deg);opacity:0}
+}
+
+/* LOADING */
+
+#loader {
+ position:fixed;
+ inset:0;
+ z-index:1000;
+ background:#160d20;
+ display:grid;
+ place-items:center;
+ transition:1s;
+}
+
+#loader.hide {opacity:0;pointer-events:none}
+
+.load-content {text-align:center}
+
+.load-logo {
+ font:italic 55px "Playfair Display";
+ color:var(--pink);
+}
+
+.load-bar {
+ width:170px;
+ height:3px;
+ background:#ffffff20;
+ margin:25px auto;
+ border-radius:20px;
+ overflow:hidden;
+}
+
+.load-progress {
+ width:0;
+ height:100%;
+ background:var(--pink);
+ animation:loading 1.8s forwards;
+}
+
+@keyframes loading {to{width:100%}}
+
+/* NAV */
+
+nav {
+ position:absolute;
+ top:0;
+ left:0;
+ width:100%;
+ padding:25px 7%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ z-index:10;
+}
+
+.logo {
+ font:600 20px "Playfair Display";
+ color:var(--pink);
+ letter-spacing:2px;
+ direction:ltr;
+}
+
+.nav-tag {
+ font:10px "DM Sans";
+ letter-spacing:3px;
+ color:var(--muted);
+ direction:ltr;
+}
+
+/* HERO */
+
+.hero {
+ min-height:100svh;
+ display:grid;
+ place-items:center;
+ text-align:center;
+ padding:100px 20px 80px;
+ position:relative;
+ overflow:hidden;
+}
+
+.hero-glow {
+ position:absolute;
+ width:600px;
+ height:600px;
+ background:radial-gradient(circle,#c15c9b25,transparent 65%);
+ left:50%;
+ top:50%;
+ transform:translate(-50%,-50%);
+}
+
+.hero-content {position:relative;z-index:3}
+
+.eyebrow {
+ font:11px "DM Sans";
+ letter-spacing:5px;
+ color:var(--pink);
+ direction:ltr;
+ margin-bottom:35px;
+}
+
+.hero h1 {
+ font:500 clamp(75px,13vw,155px)/.9 "Playfair Display";
+ letter-spacing:-6px;
+ direction:ltr;
+ margin:0;
+}
+
+.hero h1 span {
+ display:block;
+ font-style:italic;
+ color:var(--pink);
+ text-shadow:0 0 50px #f18aba55;
+}
+
+.hero-text {
+ color:var(--muted);
+ font-size:14px;
+ line-height:2.5;
+ margin-top:38px;
+}
+
+.primary-btn {
+ display:inline-flex;
+ align-items:center;
+ gap:15px;
+ border:1px solid #ffacd080;
+ background:#ffacd01a;
+ color:white;
+ border-radius:50px;
+ padding:14px 28px;
+ margin-top:25px;
+ transition:.4s;
+}
+
+.primary-btn:hover {
+ background:var(--pink);
+ color:#241326;
+ transform:translateY(-5px);
+}
+
+.hero-flower {
+ position:absolute;
+ font-size:60px;
+ filter:drop-shadow(0 0 20px #ffacd055);
+ animation:flowerFloat 7s ease-in-out infinite;
+}
+
+.f1 {top:20%;right:12%}
+.f2 {bottom:20%;left:12%;animation-delay:-2s}
+.f3 {top:30%;left:17%;font-size:30px;animation-delay:-4s}
+
+@keyframes flowerFloat {
+ 50% {transform:translateY(-25px) rotate(18deg)}
+}
+
+.scroll {
+ position:absolute;
+ bottom:30px;
+ font:10px "DM Sans";
+ letter-spacing:4px;
+ color:var(--muted);
+}
+
+/* SECTIONS */
+
+section {padding:120px 8%;position:relative}
+
+.section-label {
+ color:var(--pink);
+ font:10px "DM Sans";
+ letter-spacing:4px;
+ direction:ltr;
+}
+
+.section-title {
+ font:italic 500 clamp(40px,7vw,80px) "Playfair Display";
+ direction:ltr;
+ margin:25px 0;
+}
+
+.center {text-align:center}
+
+.intro {
+ background:linear-gradient(180deg,#24142b,#211429);
+ text-align:center;
+}
+
+.intro h2 {
+ font-size:clamp(28px,5vw,52px);
+ line-height:2;
+ font-weight:400;
+ max-width:850px;
+ margin:35px auto;
+}
+
+.intro h2 span {color:var(--pink)}
+
+.intro p {
+ color:var(--muted);
+ line-height:2.7;
+ font-size:14px;
+ max-width:550px;
+ margin:auto;
+}
+
+/* DREAM CARDS */
+
+.cards {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
+ margin-top:65px;
+}
+
+.card {
+ min-height:310px;
+ padding:30px;
+ border:1px solid #ffffff15;
+ border-radius:15px;
+ background:linear-gradient(145deg,#ffffff0d,#ffffff03);
+ backdrop-filter:blur(12px);
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+ transition:.5s;
+ position:relative;
+ overflow:hidden;
+}
+
+.card::after {
+ content:"";
+ position:absolute;
+ width:180px;
+ height:180px;
+ border-radius:50%;
+ background:#ffacd01a;
+ filter:blur(50px);
+ bottom:-90px;
+ left:-50px;
+}
+
+.card:hover {
+ transform:translateY(-12px);
+ border-color:#ffacd080;
+}
+
+.card-icon {
+ font-size:55px;
+ transition:.6s;
+}
+
+.card:hover .card-icon {
+ transform:rotate(15deg) scale(1.2);
+}
+
+.card small {
+ color:var(--pink);
+ font:10px "DM Sans";
+ letter-spacing:3px;
+ direction:ltr;
+}
+
+.card h3 {font-size:21px;font-weight:500}
+.card p {font-size:13px;color:var(--muted);line-height:2.3}
+
+/* GAME */
+
+.game-section {
+ background:linear-gradient(160deg,#2c1736,#1a1025);
+ text-align:center;
+}
+
+.game-intro {
+ max-width:550px;
+ margin:0 auto 35px;
+ color:var(--muted);
+ font-size:13px;
+ line-height:2.5;
+}
+
+.game-box {
+ max-width:800px;
+ margin:auto;
+ padding:25px;
+ border:1px solid #ffffff20;
+ background:#ffffff08;
+ backdrop-filter:blur(20px);
+ border-radius:24px;
+}
+
+.game-top {
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:10px;
+ margin-bottom:20px;
+}
+
+.game-top span {
+ color:var(--pink);
+ font:12px "DM Sans";
+ letter-spacing:2px;
+}
+
+.score {
+ background:#ffacd01c;
+ border:1px solid #ffacd055;
+ border-radius:30px;
+ padding:10px 17px;
+}
+
+.game-stage {
+ height:340px;
+ position:relative;
+ overflow:hidden;
+ border-radius:16px;
+ background:
+ radial-gradient(ellipse at 50% 90%,#8d4b8930,transparent 60%),
+ linear-gradient(145deg,#21152e,#382044);
+ border:1px solid #ffffff12;
+}
+
+.game-stage::before {
+ content:"✦       ·        ✧        ·       ✦";
+ position:absolute;
+ top:20px;
+ left:0;
+ width:100%;
+ color:#ffdaeb80;
+ letter-spacing:20px;
+ font-size:17px;
+ pointer-events:none;
+}
+
+.game-target {
+ position:absolute;
+ width:58px;
+ height:58px;
+ display:grid;
+ place-items:center;
+ border:0;
+ border-radius:50%;
+ background:#ffffff12;
+ box-shadow:0 0 30px #ffacd055;
+ font-size:34px;
+ animation:targetFloat 2s ease-in-out infinite alternate;
+ transition:transform .2s;
+}
+
+.game-target:hover {transform:scale(1.3)}
+
+@keyframes targetFloat {
+ to {transform:translateY(-15px) rotate(15deg)}
+}
+
+.game-controls {
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:10px;
+ margin-top:20px;
+}
+
+.game-btn {
+ background:var(--pink);
+ color:#29162b;
+ border:0;
+ border-radius:50px;
+ padding:13px 24px;
+ font-weight:700;
+ transition:.3s;
+}
+
+.game-btn:hover {transform:scale(1.06)}
+
+.game-btn.secondary {
+ color:var(--white);
+ background:#ffffff15;
+ border:1px solid #ffffff25;
+}
+
+.game-status {
+ min-height:28px;
+ color:var(--pink);
+ font-size:13px;
+ margin-top:17px;
+}
+
+/* PRIZE */
+
+#prize {
+ display:none;
+ position:fixed;
+ inset:0;
+ z-index:500;
+ background:#100a18eF;
+ backdrop-filter:blur(15px);
+ place-items:center;
+ padding:20px;
+}
+
+#prize.show {display:grid;animation:fade .5s}
+
+.prize-card {
+ max-width:450px;
+ width:100%;
+ padding:40px 25px;
+ background:linear-gradient(145deg,#39203f,#21152c);
+ border:1px solid #ffacd070;
+ border-radius:25px;
+ text-align:center;
+ animation:pop .7s;
+}
+
+.prize-card .big {font-size:65px}
+
+.prize-card h2 {
+ color:var(--pink);
+ font:italic 36px "Playfair Display";
+}
+
+.prize-card p {line-height:2.5;color:#e8cddd}
+
+@keyframes pop {
+ from {transform:scale(.7);opacity:0}
+ to {transform:scale(1);opacity:1}
+}
+
+@keyframes fade {from{opacity:0}to{opacity:1}}
+
+/* LETTER */
+
+.letter-section {
+ background:#f5e5ed;
+ color:#3a2336;
+ text-align:center;
+}
+
+.letter-section .section-label {color:#a94e80}
+
+.letter-paper {
+ max-width:650px;
+ margin:55px auto 0;
+ padding:50px 35px;
+ background:#fff9f8;
+ border-radius:5px;
+ box-shadow:0 30px 70px #572e4b25;
+ position:relative;
+ transform:rotate(-1deg);
+ transition:.5s;
+}
+
+.letter-paper:hover {transform:rotate(0) translateY(-8px)}
+
+.letter-paper h3 {font-size:23px}
+
+.letter-paper p {line-height:3;font-size:14px}
+
+.letter-paper button {
+ border:0;
+ background:#a84f80;
+ color:white;
+ padding:14px 28px;
+ border-radius:50px;
+}
+
+#fullLetter {
+ display:none;
+ line-height:3;
+ margin-top:30px;
+ animation:fade .8s;
+}
+
+#fullLetter.show {display:block}
+
+/* END */
+
+.final {
+ min-height:85vh;
+ display:grid;
+ place-items:center;
+ text-align:center;
+ overflow:hidden;
+}
+
+.final h2 {
+ font:italic 500 clamp(55px,11vw,120px) "Playfair Display";
+ color:var(--pink);
+ direction:ltr;
+}
+
+.final p {color:var(--muted);line-height:2.7}
+
+.final-heart {
+ font-size:55px;
+ animation:beat 1.4s infinite;
+}
+
+@keyframes beat {
+ 50% {transform:scale(1.2)}
+}
+
+footer {
+ padding:30px 7%;
+ border-top:1px solid #ffffff15;
+ display:flex;
+ justify-content:space-between;
+ color:var(--muted);
+ font:10px "DM Sans";
+ letter-spacing:2px;
+ direction:ltr;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+ opacity:0;
+ transform:translateY(45px);
+ transition:1s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible {
+ opacity:1;
+ transform:translateY(0);
+}
+
+@media(max-width:700px) {
+ nav {padding:22px 6%}
+ .nav-tag {font-size:8px;letter-spacing:1px}
+ .hero h1 {font-size:76px;letter-spacing:-3px}
+ .hero-flower {font-size:35px}
+ section {padding:90px 6%}
+ .cards {grid-template-columns:1fr}
+ .card {min-height:230px}
+ .game-box {padding:12px}
+ .game-stage {height:330px}
+ .letter-paper {padding:35px 20px}
+ footer {flex-direction:column;gap:15px;text-align:center}
+}
+
+@media(prefers-reduced-motion:reduce) {
+ *,*::before,*::after {
+  animation-duration:.01ms!important;
+  transition-duration:.01ms!important;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+ <div class="load-content">
+  <div class="load-logo">Vania ♡</div>
+  <div class="load-bar"><div class="load-progress"></div></div>
+  <div style="font:10px 'DM Sans';letter-spacing:4px;color:#c4aebe">
+   PREPARING YOUR DREAM WORLD
+  </div>
+ </div>
+</div>
+
+<div id="particles"></div>
+
+<nav>
+ <div class="logo">VANIA'S WORLD ✳</div>
+ <div class="nav-tag">A LITTLE GIFT FOR YOU</div>
+</nav>
+
+<header class="hero">
+
+ <div class="hero-glow"></div>
+ <div class="hero-flower f1">🌷</div>
+ <div class="hero-flower f2">🦋</div>
+ <div class="hero-flower f3">✧</div>
+
+ <div class="hero-content">
+  <div class="eyebrow">WELCOME TO YOUR LITTLE UNIVERSE</div>
+
+  <h1>
+   Hello,
+   <span>Vania.</span>
+  </h1>
+
+  <p class="hero-text">
+   وانیاااا! بالاخره رسیدی! 🥹
+   <br>
+   یه دنیای کوچولو ساختم که قراره پر از گل و ستاره و اتفاقای ناز باشه.
+   <br>
+   و خب... صاحب این دنیا خودِ تویی! 🎀
+  </p>
+
+  <a href="#intro" class="primary-btn">
+  اماده ای بریم؟<span>✦</span>
+  </a>
+ </div>
+
+ <div class="scroll">SCROLL INTO YOUR MAGIC ↓</div>
+</header>
+
+<section class="intro" id="intro">
+
+ <div class="section-label">01 — DEAR VANIA</div>
+
+ <h2 class="reveal">
+ وانیا جون
+  <span>یه عالمه قشنگی توی وجودته</span>
+  حتی اگه امروز خودت نتونی ببینیش ♡
+ </h2>
+
+ <p class="reveal">
+  اومدم یه گوشه کوچولو از دنیا رو برات قشنگ کنم
+  امیدوارم حالت خوب بشه
+  <br>
+  راستی اینجا همه‌چی با اجازه خانم وانیا اداره می‌شه 🌸
+ </p>
+
+</section>
+
+<section class="center">
+
+ <div class="section-label">02 — LITTLE MAGIC</div>
+ <h2 class="section-title reveal">A world of little wishes.</h2>
+
+ <div class="cards">
+
+<article class="card reveal">
+  <div class="card-icon">🧸</div>
+  <div>
+    <small>01 — FOR YOU</small>
+    <h3>یه کوچولو هوای خودتو داشته باش!</h3>
+    <p>
+      وانیا با خودت مهربون‌تر باش دختر!
+      لازم نیست همه‌چی رو به دوش بکشی
+      امروز اگه حوصله نداشتی هم نداشتی
+     فدای سرت 🎀
+    </p>
+  </div>
+</article>
+
+  <article class="card reveal">
+   <div class="card-icon">🍓</div>
+   <div>
+    <small>02 — SWEETNESS</small>
+    <h3>یه عالمه اتفاق شیرین</h3>
+    <p>
+     آرزو می‌کنم روزات پر بشن از خبرای خوب
+     آهنگای قشنگ و خنده‌های از ته دل
+    </p>
+   </div>
+  </article>
+
+ <article class="card reveal">
+  <div class="card-icon">🌷</div>
+  <div>
+    <small>02 — A LITTLE HUG</small>
+    <h3>کاش الان یه لبخند داشتی...</h3>
+    <p>
+      نمی‌دونم دقیقا چی توی دلت می‌گذره
+      ولی دلم می‌خواد بدونی قرار نیست همیشه
+      همه‌چی رو تنهایی تحمل کنی
+      اگه چیزی بود بگو کمکت میکنم 🥹
+    </p>
+  </div>
+</article>
+
+ </div>
+</section>
+
+<!-- GAME -->
+
+<section class="game-section">
+
+ <div class="section-label">03 — LET'S PLAY!</div>
+
+ <h2 class="section-title reveal">Starry little game ✦</h2>
+
+ <p class="game-intro">
+  وانیاااا! ستاره‌های کوچولو توی آسمون گم شدن!
+  بیا باهم پیداشون کنیم
+  هفت‌تاشونو جمع کن تا هدیه مخفیت باز بشه 💗
+ </p>
+
+ <div class="game-box">
+
+  <div class="game-top">
+   <span>VANIA'S STAR HUNT</span>
+   <span class="score">✦ <b id="score">0</b> / 7</span>
+  </div>
+
+  <div class="game-stage" id="stage">
+   <div style="position:absolute;inset:0;display:grid;place-items:center;color:#ffffff65;font-size:13px;pointer-events:none" id="gameHint">
+    آماده‌ای ستاره‌ها رو پیدا کنی؟ ✨
+   </div>
+  </div>
+
+  <div class="game-controls">
+   <button class="game-btn" id="startBtn" onclick="startGame()">
+    شروع بازی 🎀
+   </button>
+   <button class="game-btn secondary" onclick="resetGame()">
+    از اول بازی کنیم
+   </button>
+  </div>
+
+  <div class="game-status" id="status">
+   عجله‌ای نیست هر وقت آماده بودی شروع کن 🌷
+  </div>
+
+ </div>
+</section>
+
+<!-- LETTER -->
+
+<section class="letter-section">
+
+ <div class="section-label">04 — A SECRET LETTER</div>
+ <h2 class="section-title reveal">Just for you, Vania.</h2>
+
+ <div class="letter-paper reveal">
+
+  <div style="font-size:50px">💌</div>
+
+  <h3>نامه‌ای برای خانم وانیا</h3>
+
+  <p>
+   سلام به قشنگ‌ترین مهمون این دنیا! 🌷
+   <br>
+   یه نامه کوچولو برات دارم...
+   <br>
+   ولی باید خودت بازش کنی!
+  </p>
+
+  <button onclick="openLetter()" id="letterBtn">
+   نامه‌مو بخون 🥹
+  </button>
+
+  <div id="fullLetter">
+
+   وانیاااای عزیزم! 💗
+
+   <br><br>
+
+   می‌دونی چی می‌خوام بهت بگم؟
+
+   <br>
+
+   اینکه امیدوارم هیچ‌وقت فراموش نکنی چقدر ارزشمندی
+   حتی روزایی که حوصله هیچ‌چیزی رو نداری
+   حتی وقتی همه‌چی اون‌جوری که می‌خواستی پیش نمی‌ره
+
+   <br><br>
+
+   کاش می‌شد تمام گل‌های دنیا رو جمع کرد
+   و گذاشت جلوی در خونه‌ات 🌷
+
+   <br>
+
+   کاش هر روز یه اتفاق کوچولو بیفته که
+   بگی وای امروز چقدر قشنگ بود
+
+   <br><br>
+
+   و یه چیز دیگه...
+
+   <br>
+
+  لارم نیست همه چیو تنهایی حل کنی
+  دیدی کمکی از دست من بر میاد حتما بگو
+
+   <br><br>
+
+   امیدوارم این سایت یه لبخند کوچولو برات آورده باشه
+
+   <br><br>
+
+   <strong style="color:#b34f83">
+    کلی گل و شکلات و آرزوی خوب برای تو
+    وانیا جون 🍓
+   </strong>
+
+   <br><br>
+
+   <span style="font-size:25px">♡ 🧸 ♡</span>
+
+  </div>
+
+ </div>
+</section>
+
+<section class="final">
+
+ <div class="reveal">
+  <div class="final-heart">💗</div>
+
+  <h2>Stay magical.</h2>
+
+  <p>
+   این دنیای کوچولو همیشه یه گوشه قشنگ برای تو داره
+   <br>
+   امیدوارم روزهای پیش روت پر از آرامش باشن
+   <br>
+   دوست‌داشتنی بمون وانیا 🎀
+  </p>
+
+  <div style="color:#ffacd0;font:11px 'DM Sans';letter-spacing:4px;margin-top:40px">
+   MADE ESPECIALLY FOR VANIA ♡
+  </div>
+ </div>
+
+</section>
+
+<footer>
+ <span>VANIA DREAM WORLD © 2026</span>
+ <span>MADE WITH KINDNESS ✳</span>
+</footer>
+
+<!-- PRIZE MODAL -->
+
+<div id="prize">
+ <div class="prize-card">
+  <div class="big">🎀🌷🧸</div>
+  <h2>YOU DID IT!</h2>
+  <p>
+   وااای وانیااا همه ستاره‌ها رو پیدا کردی
+   <br>
+   تو برنده یه جعبه پر از آرزوهای قشنگ شدی
+   <br><br>
+   امیدوارم روزات به قشنگی همین لحظه باشن
+   <br>
+   یه عالمه لبخند مهمون قلبت 💗
+  </p>
+  <button class="game-btn" onclick="closePrize()">
+   مرسیییی ♡
+  </button>
+ </div>
+</div>
+
+<script>
+/* LOADER */
+
+window.addEventListener('load',()=>{
+ setTimeout(()=>{
+  document.getElementById('loader').classList.add('hide');
+ },1900);
+});
+
+/* PARTICLES */
+
+const particleLayer=document.getElementById('particles');
+
+function makeParticle(){
+ const p=document.createElement('span');
+ p.className='particle';
+
+ const items=['✧','♡','🌸','✦','·','🦋'];
+ p.textContent=items[Math.floor(Math.random()*items.length)];
+
+ p.style.left=Math.random()*100+'%';
+ p.style.fontSize=(12+Math.random()*20)+'px';
+ p.style.animationDuration=(6+Math.random()*8)+'s';
+
+ particleLayer.appendChild(p);
+
+ setTimeout(()=>p.remove(),15000);
+}
+
+setInterval(makeParticle,550);
+
+/* SCROLL REVEAL */
+
+const revealObserver=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('visible');
+   revealObserver.unobserve(entry.target);
+  }
+ });
+},{threshold:.15});
+
+document.querySelectorAll('.reveal').forEach(el=>{
+ revealObserver.observe(el);
+});
+
+/* LETTER */
+
+function openLetter(){
+ const letter=document.getElementById('fullLetter');
+ letter.classList.add('show');
+ document.getElementById('letterBtn').textContent='نامه باز شد! ♡';
+ document.getElementById('letterBtn').disabled=true;
+}
+
+/* STAR GAME */
+
+const stage=document.getElementById('stage');
+const scoreElement=document.getElementById('score');
+const statusElement=document.getElementById('status');
+const hint=document.getElementById('gameHint');
+
+let score=0;
+let playing=false;
+let prizeShown=false;
+
+const stars=['🌟','⭐','💖','✨','🌸','🦋'];
+
+function startGame(){
+ if(prizeShown){
+  resetGame();
+ }
+
+ playing=true;
+ hint.style.display='none';
+
+ document.getElementById('startBtn').textContent='بازی شروع شد';
+
+ statusElement.textContent='آفرین ستاره‌ها رو لمس کن وانیا ✨';
+
+ spawnStar();
+}
+
+function spawnStar(){
+ if(!playing || score>=7)return;
+
+ const target=document.createElement('button');
+
+ target.className='game-target';
+ target.type='button';
+
+ target.textContent=stars[
+  Math.floor(Math.random()*stars.length)
+ ];
+
+ target.style.left=(8+Math.random()*80)+'%';
+ target.style.top=(12+Math.random()*70)+'%';
+
+ target.addEventListener('click',()=>{
+  if(!playing)return;
+
+  score++;
+  scoreElement.textContent=score;
+
+  target.textContent='💗';
+  target.style.transform='scale(1.7)';
+  target.style.opacity='0';
+
+  setTimeout(()=>target.remove(),180);
+
+  statusElement.textContent=[
+   'وااای چه سریع 🥹',
+   'یکی دیگه برای وانیا',
+   'آفرین دختر ستاره‌ای ✨',
+   'چه خوشگله این ستاره‌ها',
+   'تقریباً رسیدی به هدیه‌ات 🎀'
+  ][Math.floor(Math.random()*5)];
+
+  if(score>=7){
+   playing=false;
+   prizeShown=true;
+   stage.innerHTML='<div style="position:absolute;inset:0;display:grid;place-items:center;font-size:65px">🌟💗🌟</div>';
+   statusElement.textContent='تموم شد هدیه‌ات آماده‌ست 🎁';
+
+   setTimeout(()=>{
+    document.getElementById('prize').classList.add('show');
+   },700);
+
+  }else{
+   setTimeout(spawnStar,250);
+  }
+ });
+
+ stage.appendChild(target);
+}
+
+function resetGame(){
+ playing=false;
+ score=0;
+ prizeShown=false;
+
+ scoreElement.textContent='0';
+ stage.innerHTML='';
+ stage.appendChild(hint);
+ hint.style.display='grid';
+
+ statusElement.textContent='این دفعه چندتا ستاره جمع می‌کنی؟ 🌷';
+ document.getElementById('startBtn').textContent='شروع بازی 🎀';
+ document.getElementById('prize').classList.remove('show');
+}
+
+function closePrize(){
+ document.getElementById('prize').classList.remove('show');
+ statusElement.textContent='تو بهترین ستاره این دنیایی وانیا 💗';
+}
+
+/* HERO PARALLAX */
+
+if(window.matchMedia('(pointer:fine)').matches){
+ document.querySelector('.hero').addEventListener('mousemove',e=>{
+  const x=(e.clientX/window.innerWidth-.5);
+  const y=(e.clientY/window.innerHeight-.5);
+
+  document.querySelectorAll('.hero-flower').forEach((el,i)=>{
+   el.style.translate=`${x*(i+1)*15}px ${y*(i+1)*15}px`;
+  });
+ });
+}
+</script>
+
+</body>
+</html>
